@@ -1,10 +1,5 @@
 import { v4 as uuidV4 } from "uuid";
 
-interface IUser {
-  name: string;
-  email: string;
-}
-
 class User {
   id: string;
   name: string;
@@ -13,16 +8,12 @@ class User {
   created_at: Date;
   updated_at: Date;
 
-  constructor({ name, email }: IUser) {
+  constructor() {
     if (!this.id) {
       this.id = uuidV4();
     }
 
-    this.name = name;
-    this.email = email;
     this.admin = false;
-    this.created_at = new Date();
-    this.updated_at = new Date();
   }
 }
 
